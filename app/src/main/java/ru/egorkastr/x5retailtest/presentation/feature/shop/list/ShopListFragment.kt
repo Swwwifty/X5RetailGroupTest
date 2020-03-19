@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.DividerItemDecoration
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_shop_list.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -20,6 +21,10 @@ class ShopListFragment : BaseFragment() {
 
     private val viewModel: ShopListViewModel by viewModel { parametersOf(this.activity) }
 
+    private val adapter: ShopListAdapter by lazy {
+        ShopListAdapter(onShopClick())
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -30,19 +35,27 @@ class ShopListFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        shop_list_container.addItemDecoration(
+            DividerItemDecoration(
+                context,
+                DividerItemDecoration.VERTICAL
+            )
+        )
+        shop_list_container.setHasFixedSize(true)
+        shop_list_container.adapter = adapter
+
         subscribeToShopList()
         subscribeToSpinner()
         subscripeToSnackbar()
     }
 
+    private fun onShopClick() = { shopId: Int -> viewModel.showShopDetail(shopId) }
+
     private fun subscribeToShopList() {
         viewModel.shopList
-            .observe(this, Observer { value ->
-                if (value.isNotEmpty()) {
-                    shop_name.text = value[0].name
-                } else {
-                    shop_name.text = ""
-                }
+            .observe(this, Observer { shopList ->
+                    adapter.submitList(shopList)
             })
     }
 

@@ -8,7 +8,7 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
-                  <entry key="recipe_detail_fragment">
+                  <entry key="shop_detail_fragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
@@ -20,7 +20,7 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="recipe_list_fragment">
+                  <entry key="shop_list_fragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
@@ -31,7 +31,7 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="navigate_to_recipe_detail_fragment">
+                            <entry key="navigate_to_shop_detail_fragment">
                               <value>
                                 <LayoutPositions />
                               </value>

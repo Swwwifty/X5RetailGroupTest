@@ -24,6 +24,9 @@ android {
     kotlinOptions {
         freeCompilerArgs = ["-Xallow-result-return-type"]
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 apply plugin: 'kotlin-kapt'
@@ -38,6 +41,7 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$appDependencies.android_appcompat_version"
     implementation "androidx.core:core-ktx:$appDependencies.android_core_ktx_version"
     implementation "androidx.constraintlayout:constraintlayout:$appDependencies.android_constraint_layout_version"
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
     // KOIN
     implementation "org.koin:koin-androidx-viewmodel:$appDependencies.koin_version"
 

@@ -5,5 +5,5 @@ package ru.egorkastr.x5retailtest.domain.entity
  */
 data class ShopEntity(
     val id: Int,
-    val name: String
+    val address: String
 )
