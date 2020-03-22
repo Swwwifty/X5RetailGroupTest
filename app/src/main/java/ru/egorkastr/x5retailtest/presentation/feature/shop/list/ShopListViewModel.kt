@@ -80,7 +80,7 @@ class ShopListViewModel(
      */
     private fun launchDataLoad(block: suspend () -> Unit) {
         viewModelScope.launch {
-            repeat(1000) {
+            repeat(Int.MAX_VALUE) {
                 try {
                     _spinner.value = true
                     block()

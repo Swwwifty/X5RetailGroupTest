@@ -21,7 +21,7 @@
         android:layout_marginEnd="@dimen/std_margin"
         android:layout_marginBottom="@dimen/std_half_margin"
         android:elevation="@dimen/std_elevation"
-        app:cardCornerRadius="@dimen/std_cornder_radius">
+        app:cardCornerRadius="@dimen/std_corner_radius">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/shop_list_item"

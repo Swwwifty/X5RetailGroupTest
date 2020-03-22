@@ -50,7 +50,7 @@ class ShopListAdapter(private val onItemClick: (shopId: Int) -> Unit) :
         }
 
         override fun onClick(v: View?) {
-            val shop = getItem((adapterPosition))
+            val shop = getItem(adapterPosition)
             shop?.let {
                 onItemClick(shop.id)
             }

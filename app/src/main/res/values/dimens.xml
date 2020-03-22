@@ -5,5 +5,5 @@
     <dimen name="std_double_margin">32dp</dimen>
 
     <dimen name="std_elevation">4dp</dimen>
-    <dimen name="std_cornder_radius">5dp</dimen>
+    <dimen name="std_corner_radius">5dp</dimen>
 </resources>

@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_shop_list.*
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.core.parameter.parametersOf
 import ru.egorkastr.x5retailtest.R
 import ru.egorkastr.x5retailtest.presentation.common.BaseFragment
@@ -17,7 +17,7 @@ import ru.egorkastr.x5retailtest.presentation.common.BaseFragment
  */
 class ShopListFragment : BaseFragment() {
 
-    private val viewModel: ShopListViewModel by viewModel { parametersOf(this.activity) }
+    private val viewModel: ShopListViewModel by sharedViewModel { parametersOf(activity) }
 
     private val adapter: ShopListAdapter by lazy {
         ShopListAdapter(onShopClick())
