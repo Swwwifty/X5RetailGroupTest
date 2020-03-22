@@ -2,6 +2,7 @@
 <resources>
     <dimen name="std_margin">16dp</dimen>
     <dimen name="std_half_margin">8dp</dimen>
+    <dimen name="std_double_margin">32dp</dimen>
 
     <dimen name="std_elevation">4dp</dimen>
     <dimen name="std_cornder_radius">5dp</dimen>

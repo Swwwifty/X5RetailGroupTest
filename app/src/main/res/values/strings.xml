@@ -5,4 +5,15 @@
     <string name="shop_list_number_header">Number</string>
     <string name="shop_list_address_header">Address</string>
     <!-- Shop list feature end -->
+
+    <!-- Shop detail info feature start -->
+    <string name="shop_detail_number_header">Number</string>
+    <string name="shop_detail_name_header">Name</string>
+    <string name="shop_detail_address_header">Address</string>
+    <string name="shop_detail_profit_header">Annual profit</string>
+    <string name="shop_detail_latitude_header">Latitude</string>
+    <string name="shop_detail_longitude_header">Longitude</string>
+    <string name="shop_detail_open_date_header">Open date</string>
+    <string name="shop_detail_state_header">State</string>
+    <!-- Shop detail info feature end -->
 </resources>

@@ -11,7 +11,6 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 import ru.egorkastr.x5retailtest.R
 import ru.egorkastr.x5retailtest.presentation.common.BaseFragment
-import ru.egorkastr.x5retailtest.presentation.feature.shop.ShopListViewModel
 
 /**
  * Fragment for show the list of shops

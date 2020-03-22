@@ -1,4 +1,4 @@
-package ru.egorkastr.x5retailtest.presentation.feature.shop
+package ru.egorkastr.x5retailtest.presentation.feature.shop.list
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -7,13 +7,14 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import ru.egorkastr.x5retailtest.domain.entity.ShopEntity
-import ru.egorkastr.x5retailtest.domain.usecase.ShopListInteractor
+import ru.egorkastr.x5retailtest.domain.usecase.ShopInteractor
+import ru.egorkastr.x5retailtest.presentation.feature.shop.ShopRouter
 
 /**
  * ViewModel for shop list
  */
 class ShopListViewModel(
-    private val shopListInteractor: ShopListInteractor,
+    private val shopInteractor: ShopInteractor,
     private val router: ShopRouter
 ) : ViewModel() {
 
@@ -28,7 +29,7 @@ class ShopListViewModel(
     private val _snackBar = MutableLiveData<String?>()
 
     private fun loadShopList() = launchDataLoad {
-        val result = shopListInteractor.getShopList()
+        val result = shopInteractor.getShopList()
         if (result.isSuccess) {
             _shopList.value = result.getOrNull() ?: listOf()
         } else {

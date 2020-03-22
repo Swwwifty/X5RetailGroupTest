@@ -7,14 +7,4 @@ import androidx.fragment.app.Fragment
  */
 abstract class BaseFragment : Fragment() {
 
-    /**
-     * show loader while data is loading
-     */
-    protected fun showLoading() = {}
-
-    /**
-     * hide loader
-     */
-    protected fun hideLoading() = {}
-
 }

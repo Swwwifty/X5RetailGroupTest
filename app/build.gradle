@@ -4,6 +4,10 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -23,13 +27,18 @@ android {
     }
     kotlinOptions {
         freeCompilerArgs = ["-Xallow-result-return-type"]
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     dataBinding {
         enabled = true
     }
 }
-
-apply plugin: 'kotlin-kapt'
 
 dependencies {
     def appDependencies = rootProject.ext
