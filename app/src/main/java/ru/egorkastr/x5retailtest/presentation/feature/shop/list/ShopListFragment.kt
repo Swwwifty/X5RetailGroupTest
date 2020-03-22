@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.DividerItemDecoration
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_shop_list.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -36,12 +35,6 @@ class ShopListFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        shop_list_container.addItemDecoration(
-            DividerItemDecoration(
-                context,
-                DividerItemDecoration.VERTICAL
-            )
-        )
         shop_list_container.setHasFixedSize(true)
         shop_list_container.adapter = adapter
 
@@ -55,7 +48,7 @@ class ShopListFragment : BaseFragment() {
     private fun subscribeToShopList() {
         viewModel.shopList
             .observe(this, Observer { shopList ->
-                    adapter.submitList(shopList)
+                adapter.submitList(shopList)
             })
     }
 

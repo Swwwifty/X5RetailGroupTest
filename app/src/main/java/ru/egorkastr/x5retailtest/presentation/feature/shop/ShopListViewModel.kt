@@ -4,12 +4,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import ru.egorkastr.x5retailtest.domain.entity.ShopEntity
 import ru.egorkastr.x5retailtest.domain.usecase.ShopListInteractor
 
 /**
- * ViewModel for [ShopListFragment]
+ * ViewModel for shop list
  */
 class ShopListViewModel(
     private val shopListInteractor: ShopListInteractor,
@@ -78,13 +79,16 @@ class ShopListViewModel(
      */
     private fun launchDataLoad(block: suspend () -> Unit) {
         viewModelScope.launch {
-            try {
-                _spinner.value = true
-                block()
-            } catch (error: Throwable) {
-                _snackBar.value = error.message
-            } finally {
-                _spinner.value = false
+            repeat(1000) {
+                try {
+                    _spinner.value = true
+                    block()
+                } catch (error: Throwable) {
+                    _snackBar.value = error.message
+                } finally {
+                    _spinner.value = false
+                    delay(5000)
+                }
             }
         }
     }

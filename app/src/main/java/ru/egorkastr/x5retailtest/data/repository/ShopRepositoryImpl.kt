@@ -14,10 +14,11 @@ class ShopRepositoryImpl : ShopRepository {
         delay(1000)
         val itemCount = Random.nextInt(0, 30)
         val itemList = mutableListOf<ShopEntity>()
-        for (i in 0 until itemCount) {
-            val id = Random.nextInt(1, itemCount + 1)
+        for (i in 1..itemCount) {
+            val id = i
             itemList.add(ShopEntity(id, "simple address $id"))
         }
+        itemList.shuffle()
         return Result.success(
             itemList
         )

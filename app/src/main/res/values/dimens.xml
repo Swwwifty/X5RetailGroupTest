@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="std_margin">16dp</dimen>
+    <dimen name="std_half_margin">8dp</dimen>
+
+    <dimen name="std_elevation">4dp</dimen>
+    <dimen name="std_cornder_radius">5dp</dimen>
 </resources>

@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">X5RetailTest</string>
+
+    <!-- Shop list feature start -->
+    <string name="shop_list_number_header">Number</string>
+    <string name="shop_list_address_header">Address</string>
+    <!-- Shop list feature end -->
 </resources>
