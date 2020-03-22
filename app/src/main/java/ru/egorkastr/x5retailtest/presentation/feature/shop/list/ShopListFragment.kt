@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_shop_list.*
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
@@ -42,7 +43,9 @@ class ShopListFragment : BaseFragment() {
         subscripeToSnackbar()
     }
 
-    private fun onShopClick() = { shopId: Int -> viewModel.showShopDetail(shopId) }
+    private fun onShopClick() = { shopId: Int ->
+        findNavController().navigate(ShopListFragmentDirections.navigateToShopDetailFragment(shopId))
+    }
 
     private fun subscribeToShopList() {
         viewModel.shopList

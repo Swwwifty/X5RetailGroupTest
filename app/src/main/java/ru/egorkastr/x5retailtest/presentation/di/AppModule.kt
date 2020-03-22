@@ -1,15 +1,11 @@
 package ru.egorkastr.x5retailtest.presentation.di
 
 import org.koin.androidx.viewmodel.dsl.viewModel
-import org.koin.core.parameter.parametersOf
 import org.koin.dsl.module
 import ru.egorkastr.x5retailtest.data.repository.ShopRepositoryImpl
 import ru.egorkastr.x5retailtest.domain.repository.ShopRepository
 import ru.egorkastr.x5retailtest.domain.usecase.ShopInteractor
 import ru.egorkastr.x5retailtest.domain.usecase.ShopInteractorImpl
-import ru.egorkastr.x5retailtest.presentation.common.BaseActivity
-import ru.egorkastr.x5retailtest.presentation.feature.shop.ShopRouter
-import ru.egorkastr.x5retailtest.presentation.feature.shop.ShopRouterImpl
 import ru.egorkastr.x5retailtest.presentation.feature.shop.detail.ShopDetailViewModel
 import ru.egorkastr.x5retailtest.presentation.feature.shop.list.ShopListViewModel
 
@@ -18,12 +14,10 @@ import ru.egorkastr.x5retailtest.presentation.feature.shop.list.ShopListViewMode
  */
 val shopModule = module {
 
-    factory<ShopRouter> { (view: BaseActivity) -> ShopRouterImpl(view) }
-
-    viewModel { (view: BaseActivity) ->
+    viewModel {
         ShopListViewModel(
-            get(),
-            get { parametersOf(view) })
+            get()
+        )
     }
 
     viewModel { (shopId: Int) ->

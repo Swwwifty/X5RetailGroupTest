@@ -8,14 +8,12 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import ru.egorkastr.x5retailtest.domain.entity.ShopEntity
 import ru.egorkastr.x5retailtest.domain.usecase.ShopInteractor
-import ru.egorkastr.x5retailtest.presentation.feature.shop.ShopRouter
 
 /**
  * ViewModel for shop list
  */
 class ShopListViewModel(
-    private val shopInteractor: ShopInteractor,
-    private val router: ShopRouter
+    private val shopInteractor: ShopInteractor
 ) : ViewModel() {
 
     private val _shopList: MutableLiveData<List<ShopEntity>> by lazy {
@@ -55,13 +53,6 @@ class ShopListViewModel(
      */
     val snackbar: LiveData<String?>
         get() = _snackBar
-
-    /**
-     * Open detail info for selected shop with [id]
-     */
-    fun showShopDetail(id: Int) {
-        router.showShopDetail(id)
-    }
 
     /**
      * Called immediately after the UI shows the snackbar.
