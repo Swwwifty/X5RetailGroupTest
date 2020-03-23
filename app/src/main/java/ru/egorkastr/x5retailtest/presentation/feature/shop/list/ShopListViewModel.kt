@@ -79,7 +79,7 @@ class ShopListViewModel(
                     _snackBar.value = error.message
                 } finally {
                     _spinner.value = false
-                    delay(5000)
+                    delay(30000)
                 }
             }
         }
